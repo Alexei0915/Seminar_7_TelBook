@@ -2,17 +2,14 @@ import random
 import games as gp
 import emoji
 
-# Гемплэй
-def game_start(name_one_player, name_two_player, matrix_game):
-    # Случайный выбор первого хода
-    random_move = random.randint(1, 2)
 
-    # Запуск игры
+def game_start(pl_one_name, name_two_player, matrix_game):
+    random_move = random.randint(1, 2)
     count = False
     count_len = 9
     while count == False:
         if random_move == 1:
-            gp.game_play(name_one_player, emoji.emojize('😜'), matrix_game)
+            gp.game_play(pl_one_name, emoji.emojize('🧿'), matrix_game)
             count = count_games(matrix_game)
             random_move = 2
             count_len -= 1
@@ -27,7 +24,6 @@ def game_start(name_one_player, name_two_player, matrix_game):
     return count, random_move
 
 
-# Проверка есть ли победитель
 def count_games(mat_game):
     if mat_game[0][0] == mat_game[0][1] == mat_game[0][2]:
         return True

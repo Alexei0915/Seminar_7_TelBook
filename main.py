@@ -1,10 +1,7 @@
-import view as vie
+import view as v
 import controller as contrl
 
-# Вызов методов ввода имен игроков
-n_o = vie.hello_one()
-n_tw = vie.hello_two()
-
-# Запуск игры
-gst = contrl.game_start(name_one_player=n_o, name_two_player=n_tw, matrix_game=vie.playing_field())
-vie.winner(count=gst[0], random_move=gst[1], name_one_player=n_o, name_two_player=n_tw)
+pl_one = v.hi_one()
+pl_two = v.hi_two()
+gst = contrl.game_start(pl_one_name=pl_one, name_two_player=pl_two, matrix_game=v.playing_table())
+v.winner(count=gst[0], random_move=gst[1], pl_one_name=pl_one, name_two_player=pl_two)
